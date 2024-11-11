@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Thanh Toán</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/thanhtoan.css">
+    <script src="../JS/jquery-3.7.1.min.js"></script>
+    <script src="../JS/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+    <!-- Left Column - Form -->
+    <div class="form-container">
+        <h2 class="text-center line-heading pb-5 pt-4" style="font-size: 2rem; font-weight: bold; color: #555; text-transform: uppercase; letter-spacing: 2px; 
+  animation: slideIn 1s ease-out, colorChange 2s infinite;">
+  Payment Information
+  </h2>
+        <form id="checkout-form">
+            <div class="mb-4 express-checkout">
+                <button class="btn btn-primary w-100 mb-2">Shop Pay</button>
+                <button class="btn btn-warning w-100 mb-2">PayPal</button>
+                <hr class="mt-4 pt-2" style="width: 80%; margin: 0 auto;">
+                <div class="text-center">OR</div>
+            </div>
+    
+            <!-- Contact Info -->
+            <div class="mb-4">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Email" required>
+                <div class="form-check mt-2">
+                    <input class="form-check-input" type="checkbox" id="emailOffers">
+                    <label class="form-check-label" for="emailOffers">
+                        Email me with news and offers
+                    </label>
+                </div>
+            </div>
+    
+            <!-- Shipping Address -->
+            <div class="mb-4">
+                <h4>Shipping Address</h4>
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <label for="country" class="form-label">Country/Region</label>
+                        <select class="form-select" id="country">
+                            <option selected>United States</option>
+                            <option value="1">Canada</option>
+                            <option value="2">United Kingdom</option>
+                        </select>
+                    </div>
+                </div>
+    
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="First name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="Last name" required>
+                    </div>
+                </div>
+    
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="address" placeholder="Address" required>
+                </div>
+    
+                <div class="mb-3">
+                    <label for="apartment" class="form-label">Apartment, suite, etc. (optional)</label>
+                    <input type="text" class="form-control" id="apartment" placeholder="Apartment, suite, etc.">
+                </div>
+    
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label for="city" class="form-label">City</label>
+                        <input type="text" class="form-control" id="city" placeholder="City" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="state" class="form-label">State</label>
+                        <input type="text" class="form-control" id="state" placeholder="State" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="zip" class="form-label">ZIP code</label>
+                        <input type="text" class="form-control" id="zip" placeholder="ZIP code" required>
+                    </div>
+                </div>
+    
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="Phone" required>
+                </div>
+            </div>
+    
+            <button type="submit" class="btn btn-dark w-100">Continue to shipping</button>
+        </form>
+    </div>
+
+    <!-- Right Column - Invoice -->
+    <div class="invoice-container">
+        <h2 class="text-center line-heading pb-5 pt-4" style="font-size: 2rem; font-weight: bold; color: #555; text-transform: uppercase; letter-spacing: 2px; 
+        animation: slideIn 1s ease-out, colorChange 2s infinite;">
+        Your Order
+        </h2>
+        <div class="cart-list" id="cart-list">
+            <div id="cart-items"></div>
+        </div>
+        <div class="total-price">
+            Total: $<span id="total-price">0</span>
+        </div>
+    </div>
+
+    <!-- thanh toán -->
+<script src="../JS/thanhtoan.js"></script>
+</body>
+</html>

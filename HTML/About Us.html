@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/header.css">
+    <link rel="stylesheet" href="../CSS/footer.css">
+    <link rel="stylesheet" href="../CSS/modal_dk.css">
+    <link rel="stylesheet" href="../CSS/modal_dn.css">
+    <link rel="stylesheet" href="../CSS/sanpham.css">
+    <link rel="stylesheet" href="../CSS/modal_chi_tiet_san_pham.css">
+    <script src="../JS/jquery-3.7.1.min.js"></script>
+    <script src="../JS/bootstrap.bundle.min.js"></script>
+    <script src="../JS/nav.js"></script>
+    <script src="../JS/table.js"></script>
+    <script src="../JS/passwordToggle.js"></script>
+    <script src="../JS/login.js"></script>
+    <script src="../JS/createAccount.js"></script>
+    <script src="../JS/modalSwitch.js"></script>
+</head>
+<body>
+    
+<!-- header -->
+<div class="container-header">
+    <div class="banner row text-center text-white mb-0">
+      <a id="shop-link" href="Holiday.html" style="text-decoration: none;">
+          <p class="text-white mt-1">Now Open:
+              <span id="shop-name" class="text-white mt-1 fw-bold">THE HOLIDAY SHOP</span>
+              <i class="bi bi-arrow-right text-white"></i>
+          </p>
+      </a>
+    </div>
+    <div class="ct5 pt-5 pb-5" style="display: flex; align-items: center; justify-content: center;">
+        <hr class="mt-4 pt-2 mx-5" style="width: 20%; margin: 0;">
+        <h5 class="text-uppercase text-center fw-bold" style="letter-spacing: 20px;">
+          the global haven
+        </h5>
+        <hr class="mt-4 pt-2 mx-5" style="width: 20%; margin: 0;">
+      </div>
+        
+  </div>
+
+<!-- modal đăng kí -->
+<div class="row">
+          
+    <div class="modal fade" id="createAccountModal" tabindex="-1" aria-labelledby="ModalFormLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content" id="register-modal-content">
+            <div class="modal-body" id="register-modal-body">
+                <button type="button" class="btn-close " id="dong_dk" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="myform bg-white">
+                    <h1 class="text-center text-uppercase ">become an insider</h1>
+                    <div class="bullet-container">
+                        <div class="bullet-item">
+                            <div class="buller-point"></div>
+                            <div class="post-header-text">Track the impact of your purchases</div>
+                        </div>
+                        <div class="bullet-item">
+                            <div class="buller-point"></div>
+                            <div class="post-header-text">Sign up for special VIP perks</div>
+                        </div>
+                        <div class="bullet-item">
+                            <div class="buller-point"></div>
+                            <div class="post-header-text">Get early access to new arrivals</div>
+                        </div>
+                    </div>
+
+                    <form id="registerForm">
+                      <div class="mb-3 mt-5">
+                          <label for="exampleInputFirstName" class="form-label">First Name</label>
+                          <input type="text" class="form-control" id="exampleInputFirstName" aria-describedby="firstNameError">
+                          <span id="firstNameError" class="error-message" style="color: red;"></span>
+                      </div>
+                      <div class="mb-3 mt-4">
+                          <label for="exampleInputLastName" class="form-label">Last Name</label>
+                          <input type="text" class="form-control" id="exampleInputLastName" aria-describedby="lastNameError">
+                          <span id="lastNameError" class="error-message" style="color: red;"></span> 
+                      </div>
+                      <div class="mb-3 mt-4">
+                          <label for="exampleInputEmail" class="form-label">Email Address</label>
+                          <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailError">
+                          <span id="emailError" class="error-message" style="color: red;"></span> 
+                      </div>
+                      <div class="mb-3 mt-4">
+                          <label for="exampleInputPassword" class="form-label">Password</label>
+                          <input type="password" class="form-control" id="exampleInputPassword" aria-describedby="passwordError">
+                          <span id="passwordError" class="error-message" style="color: red;"></span> 
+                          <span onclick="togglePassword('exampleInputPassword', 'togglePasswordIcon')" class="eye-icon1" style="cursor: pointer;">
+                              <img src="../IMAGES/modal/eyeOpen.png" id="togglePasswordIcon" alt="Toggle Password">
+                          </span>
+                      </div>
+                      <button type="submit" class="btn mt-4">CREATE ACCOUNT</button>
+                      <p class="p_modal" style="font-size: 15px;">Already have an account?<a href="#" class="modal_link_login">Sign in</a></p>
+                  </form>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+ <!-- modal đăng nhập -->   
+<div class="row">    
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="ModalFormLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content" id="register-modal-content">
+          <div class="modal-body" id="register-modal-body">
+              <button type="button" class="btn-close" id="dong_dn" data-bs-dismiss="modal" aria-label="Close"></button>
+              <div class="myform bg-white">
+                  <h1 class="text-center text-uppercase">Hello again</h1>
+                  <form id="loginForm">
+                      <div class="mb-3 mt-5">
+                          <label for="exampleInputEmail1" class="form-label">Email Address</label>
+                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                          <span id="emailError" class="text-danger error-message" style="color: red;"></span> 
+                      </div>
+                      <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Password</label>
+                          <input type="password" class="form-control" id="exampleInputPassword1">
+                          <span onclick="togglePassword('exampleInputPassword1', 'togglePasswordIcon1')" class="eye-icon" style="cursor: pointer;">
+                            <img src="../IMAGES/modal/eyeOpen.png" id="togglePasswordIcon1" alt="Toggle Password" >
+                          </span>
+                          <span id="passwordError" class="text-danger error-message" style="color: red;"></span> 
+                          <p class="mt-1 text-end" style="font-size: 12px;">Forgot password?
+                              <a href="#">Reset</a>
+                          </p>
+                      </div>
+                      <button type="submit" class="btn mt-4">LOGIN</button>
+                      <p style="font-size: 14px;">Not an insider yet? <a href="#" class="modal_link_createAccount">Sign up for an account</a></p>
+                      
+                      <div id="loginMessage" class="text-center mt-3 text-success"></div>
+                    </form>
+              </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="content">
+  <div class="ct1 row g-0" style="height: 700px;">
+    <div class="row g-0">
+        <div class="col-12" style="position: relative; height: 550px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+          <!-- Video background -->
+          <video autoplay muted loop style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+            <source src="../IMAGES/video giới thiệu website.mp4" type="video/mp4">
+
+          </video>
+      
+          <!-- Content over video -->
+          <div style="position: relative; z-index: 2;">
+            <h1 class="line-heading pb-3" style="font-size: 1.7rem; font-weight: bold; color: #fff; letter-spacing: 2px; width: 900px;">
+              
+                HOME GOODS WITH A SOUL & STORY 
+            
+            </h1>
+            <p style="width: 280px; color: white;"></p>
+            <a class="pt-3" href="home.html" style="text-decoration: none;">
+              <button type="button" style="background-color: #6f4f37; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-size: 1rem; cursor: pointer;">
+                <strong>HOME</strong>
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+    
+    
+    <div class="col-12" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; font-size: 18px;">
+      <p class="pt-4"> <em><strong>Founder of the website</strong></em></p>
+      <p style="width: 800px;"><em>We are the founders of Global Haven, a website offering exquisite home decor items to help you create the perfect living space. We are committed to providing high-quality, stylish, and creative products.</em></p>
+    </div>
+    
+</div>
+  <div class="ct2">
+    <div class="product-list" >
+      <div class="row px-5 g-5 ">
+        
+      
+        <div class="col-6 col-md-6 px-2">
+            <div class="product-item horizontal-product-item" style="position: relative;">
+              <div class="product-image">
+                <img src="../IMAGES/thành viên/hảo.jpg" class="main-img" alt="Product 1">
+                <img src="../IMAGES/thành viên/hao.jpg" class="hover-img" alt="Product 1 Hover">
+              </div>
+              <h2 class="product-name horizontal-product-item text-center" style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);">
+                <a href="https://www.facebook.com/profile.php?id=100059367216862" target="_blank" style="text-decoration: none;">
+                  <button type="button" style="background-color: white; color: #6f4f37; padding: 10px 20px; border: none; border-radius: 5px; font-size: 1rem; cursor: pointer;">
+                    <strong>ĐOÀN THỊ MỸ HẢO</strong>
+                  </button>
+                </a>
+              </h2>
+            </div>
+          </div>
+          
+      
+      <div class="col-6 col-md-6 px-2">
+          <div class="product-item horizontal-product-item" style="position: relative;">
+              <div class="product-image">
+                  <img src="../IMAGES/thành viên/diem.jpg" class="main-img" alt="Product 1">
+                  <img src="../IMAGES/thành viên/diễm.jpg" class="hover-img" alt="Product 1 Hover">
+              </div>
+              <h2 class="product-name horizontal-product-item text-center" style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);">
+                <a href="https://www.facebook.com/ngocdiem5240" target="_blank" style="text-decoration: none;">
+                  <button type="button" style="background-color: white; color: #6f4f37; padding: 10px 20px; border: none; border-radius: 5px; font-size: 1rem; cursor: pointer;">
+                    <strong>PHẠM THỊ NGỌC DIỄM</strong>
+                  </button>
+                </a>
+              </h2>
+          </div>
+      </div>
+       </div>
+    </div>
+  </div>
+  <div class="ct3">
+    <div style="position: relative; width: 100%; height: 600px;">
+      <img src="../IMAGES/THU CONG.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+  
+      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
+          <h1 class="line-heading pb-3" style="font-size: 1.7rem; font-weight: bold; letter-spacing: 2px;color: white;">  
+            The Journey of Global Haven: From Humble Beginnings to Interior Design Excellence
+          </h1>
+          <p style="color: white;">Global Haven began as a small idea, driven by the desire to bring elegance and style to every home. In the early days, we offered only a handful of simple products, but behind each item was a great passion for interior design. With carefully selected products, Global Haven slowly built trust and loyalty with our customers. We don’t just offer decor; we inspire people to create warmer, more beautiful living spaces. The journey wasn’t always smooth, but thanks to our dedication and commitment to quality, Global Haven grew stronger. What started with a modest selection has now expanded into a diverse range of styles. Each collection tells a story of creativity and passion, helping customers find the perfect pieces for their homes. We are proud of how far we’ve come and continuously strive to offer high-quality, unique products. Global Haven is the result of dreams, creativity, and a love for decor. We’ll keep moving forward, expanding and improving every day to better serve our customers.</p>
+          <a class="pt-3" href="home.html" style="text-decoration: none;">
+              <button type="button" style="background-color: white; color: #6f4f37; padding: 10px 20px; border: none; border-radius: 5px; font-size: 1rem; cursor: pointer;">
+                  <strong><a href="../HTML/Holiday.html" style="background-color: white; color: #6f4f37;  text-decoration: none;">THE HOLIDAY</a></strong>
+              </button>
+          </a>
+      </div>
+  </div>
+</div>
+<div class="ct4 pt-3" style="position: relative; height: 1500px; display: flex; background: linear-gradient(to bottom, white 0%, rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 100%), url('../IMAGES/ABOUT\ US.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat; text-align: center; color: #6f4f37; padding-top: 5rem;"> 
+  <div class="pt-5" style="text-align: center; max-width: 600px; margin: 0 auto;">
+    <p style="margin-bottom: 1rem;">We believe an object is only as beautiful as the environment in which it’s made. That’s why we travel the globe to bring the world’s best craftsmanship home to you.</p>
+    <p>Each collection is made with the finest materials. All thoughtfully designed and ethically crafted by master artisans.</p>
+  </div>
+</div>
+
+<div class="ct5 pt-5 pb-5" style="display: flex; align-items: center; justify-content: center;">
+  <hr class="mt-4 pt-2 mx-5" style="width: 20%; margin: 0;">
+  <h5 class="text-uppercase text-center fw-bold" style="letter-spacing: 20px;">
+    the global haven
+  </h5>
+  <hr class="mt-4 pt-2 mx-5" style="width: 20%; margin: 0;">
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8; /* Màu nền sáng và dễ chịu */
+}
+
+.form-container, .invoice-container {
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 740px; /* Đảm bảo kích thước không vượt quá 740px */
+}
+
+.form-container {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Bo góc nhẹ cho hộp */
+}
+
+.invoice-container {
+    background-color: #f1e6d3; /* Màu nền nâu lạnh cho invoice */
+    color: #5c4d3e; /* Màu chữ nâu tối */
+    position: sticky;
+    top: 0;
+    height: 1065px;
+    width: 100%;
+    max-width: 740px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Bo góc nhẹ */
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        justify-content: flex-start;
+        height: auto;
+    }
+
+    .form-container, .invoice-container {
+        width: 100%;  
+        max-width: 100%;
+    }
+
+    .invoice-container {
+        position: relative;
+        height: auto;
+        max-height: none;
+    }
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+#cart-items img {
+    width: 200px;   
+    max-width: 500px;
+    height: auto; 
+    object-fit: contain; 
+}
+
+@media (min-width: 768px) {
+    .row {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+
+    .col-md-6 {
+        flex: 0 0 48%;
+    }
+}
+.cart-item:hover {
+    background-color: #f1e6d3; 
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px; 
+}
+@media (max-width: 480px) {
+    .form-container, .invoice-container {
+        max-width: 100%;
+        padding: 15px;
+    }
+    .invoice-container {
+        box-shadow: none; 
+    }
+}
